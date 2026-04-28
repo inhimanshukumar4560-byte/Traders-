@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ghanshyam Tech | Master Stock & Forex Trading</title>
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --gold: #D4AF37;
+            --dark-black: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--dark-black);
+            color: white;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        html, body {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #B38728 70%, #FBF5B7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-panel {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, #D4AF37 0%, #B38728 100%);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.4s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Smooth Chart Container */
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Market Ticker (Stable Wrapper) -->
+    <div class="w-full bg-black border-b border-white/10 overflow-hidden">
+        <div class="tradingview-widget-container">
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+            "symbols": [
+                {"proName": "NSE:NIFTY", "title": "NIFTY 50"},
+                {"proName": "NSE:BANKNIFTY", "title": "BANK NIFTY"},
+                {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
+                {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+                {"proName": "OANDA:XAUUSD", "title": "GOLD"}
+            ],
+            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "adaptive"
+            }
+            </script>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-[100] bg-black/80 backdrop-blur-lg border-b border-white/5 px-4 md:px-10 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center font-black text-black text-xl">G</div>
+                <span class="text-xl md:text-2xl font-bold uppercase tracking-tighter">Ghanshyam <span class="gold-gradient">Tech</span></span>
+            </div>
+
+            <!-- Desktop Links -->
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a href="#analysis" class="hover:text-white transition">Analysis</a>
+                <a href="#services" class="hover:text-white transition">Strategies</a>
+                <a href="#pricing" class="hover:text-white transition">Education</a>
+                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="btn-premium text-black px-6 py-2.5 rounded-full">Join Telegram</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button class="lg:hidden text-2xl text-white" id="menu-btn">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Side Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-black p-10 lg:hidden">
+        <div class="flex justify-end">
+            <button class="text-3xl" id="close-btn">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-8 mt-10 text-xl font-bold uppercase">
+            <a href="#analysis" class="mobile-link">Market Analysis</a>
+            <a href="#services" class="mobile-link">Strategies</a>
+            <a href="#pricing" class="mobile-link">Masterclass</a>
+            <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="text-[#D4AF37]">Telegram Channel</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-20 pb-16 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6" data-aos="fade-down">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></span>
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Next Gen Trading Intelligence</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8" data-aos="fade-up">
+                Master the Markets with <br> <span class="gold-gradient">Institutional Precision</span>
+            </h1>
+            
+            <p class="text-gray-400 text-base md:text-xl max-w-3xl mx-auto mb-10 font-light" data-aos="fade-up" data-aos-delay="100">
+                Stop guessing. Start calculating. Learn the exact Price Action and Option Buying strategies used by Ghanshyam Tech to dominate Nifty and Forex markets.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="w-full sm:w-auto btn-premium px-10 py-5 rounded-2xl text-black font-bold text-lg flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-telegram text-2xl"></i> JOIN FREE TELEGRAM
+                </a>
+                <a href="#pricing" class="w-full sm:w-auto glass-panel px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition">
+                    VIEW COURSES
+                </a>
+            </div>
+
+            <!-- Hero Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 border-y border-white/5 py-10" data-aos="zoom-in">
+                <div>
+                    <div class="text-2xl md:text-4xl font-bold gold-gradient">150K+</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Students Trained</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-4xl font-bold gold-gradient">8.5/10</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Win Probability</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-4xl font-bold gold-gradient">24/7</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Market Support</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-4xl font-bold gold-gradient">FREE</div>
+                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Daily Analysis</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Chart Section -->
+    <section id="analysis" class="py-20 px-6 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Live Market <span class="gold-gradient">Execution</span></h2>
+                    <p class="text-gray-400">Watch how we analyze liquidity zones in real-time across Bank Nifty and Major Forex pairs.</p>
+                </div>
+                <div class="text-right">
+                    <span class="text-xs font-bold uppercase text-gray-500">Live Feed: NSE/Forex</span>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-[2rem] p-2 md:p-4 shadow-2xl" data-aos="fade-up">
+                <div class="chart-container overflow-hidden rounded-2xl">
+                    <!-- TradingView Widget -->
+                    <div id="tradingview_main" style="height:100%;width:100%"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget({
+                        "autosize": true,
+                        "symbol": "NSE:BANKNIFTY",
+                        "interval": "15",
+                        "timezone": "Asia/Kolkata",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "en",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_main"
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] hover:border-[#D4AF37]/40" data-aos="fade-up">
+                <i class="fa-solid fa-bolt-lightning text-4xl text-yellow-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Option Buying</h3>
+                <p class="text-gray-400 leading-relaxed">Learn the "Ghanshyam Setup" for fast momentum trading in Bank Nifty Options. Minimum capital, maximum returns.</p>
+            </div>
+            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] border-[#D4AF37]/30" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-chart-line text-4xl text-blue-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">SMC Forex Logic</h3>
+                <p class="text-gray-400 leading-relaxed">Trade EURUSD and Gold using Smart Money Concepts. Identify where the banks are trapping retail traders.</p>
+            </div>
+            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] hover:border-[#D4AF37]/40" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-shield-halved text-4xl text-green-500 mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Risk Management</h3>
+                <p class="text-gray-400 leading-relaxed">The holy grail of trading. We teach you how to never blow an account and stay in the game forever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6">Elevate Your <span class="gold-gradient">Trading</span></h2>
+                <p class="text-gray-500">Choose the path that fits your ambition.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Basic -->
+                <div class="glass-panel p-10 rounded-[3rem] relative group" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-2">Self-Paced Mastery</h3>
+                    <div class="text-4xl font-black mb-6">₹9,999 <span class="text-sm text-gray-500">One-time</span></div>
+                    <ul class="space-y-4 mb-10 text-gray-400">
+                        <li><i class="fa-solid fa-check text-gold mr-3"></i> 30+ Video Lessons</li>
+                        <li><i class="fa-solid fa-check text-gold mr-3"></i> Price Action Basics</li>
+                        <li><i class="fa-solid fa-check text-gold mr-3"></i> PDF Cheat Sheets</li>
+                        <li><i class="fa-solid fa-xmark text-red-500 mr-3"></i> Live Mentorship</li>
+                    </ul>
+                    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="block text-center w-full py-4 border border-white/20 rounded-2xl font-bold hover:bg-white hover:text-black transition">Inquire on Telegram</a>
+                </div>
+
+                <!-- VIP -->
+                <div class="glass-panel p-10 rounded-[3rem] border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.15)] relative scale-100 lg:scale-105" data-aos="fade-left">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+                    <h3 class="text-2xl font-bold mb-2 gold-gradient">Pro VIP Mentorship</h3>
+                    <div class="text-4xl font-black mb-6">₹24,999 <span class="text-sm text-gray-500">6 Months</span></div>
+                    <ul class="space-y-4 mb-10 text-gray-200">
+                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Live Market Trading Calls</li>
+                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Advanced Option Buying</li>
+                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Psychology Masterclass</li>
+                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Direct WhatsApp Support</li>
+                    </ul>
+                    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="block text-center w-full py-4 btn-premium rounded-2xl font-bold text-black uppercase tracking-widest">Enroll in VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-12 h-12 bg-[#D4AF37] rounded-xl flex items-center justify-center font-black text-black text-2xl">G</div>
+                <span class="text-3xl font-bold uppercase">Ghanshyam <span class="gold-gradient">Tech</span></span>
+            </div>
+            
+            <div class="flex gap-6 mb-12">
+                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <p class="text-gray-600 text-xs max-w-2xl leading-relaxed mb-8 uppercase tracking-widest">
+                Disclaimer: Trading in the Stock Market or Forex involves significant risk. Past performance of Ghanshyam Tech strategies does not guarantee future results.
+            </p>
+
+            <div class="text-gray-500 text-[10px] uppercase tracking-[0.3em]">
+                &copy; 2024 Ghanshyam Tech Education | Built for Professionals
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Telegram Button -->
+    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="fixed bottom-6 right-6 z-[200] w-16 h-16 bg-[#0088cc] text-white rounded-2xl flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform floating">
+        <i class="fa-brands fa-telegram"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            disable: 'mobile'
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        links.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
+
+        // Smooth Scroll handling for mobile
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

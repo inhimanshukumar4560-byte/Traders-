@@ -1,348 +1,355 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html class="dark scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ghanshyam Tech | Master Stock & Forex Trading</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VELVET TOUCH VIP | Exclusive High-End Spa & Companionship</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     
-    <!-- Scripts & Frameworks -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Sexy & Elegant Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        'hot-pink': '#FF1493',
+                        'deep-red': '#5C001E', /* Deeper, more luxurious red */
+                        'neon-pink': '#FF2A70',
+                        'dark-bg': '#050001', /* Almost pitch black for OLED elegance */
+                        'dark-surface': '#0f0003',
+                        'pink-light': '#FFB3D9',
+                        'primary-gold': '#D4AF37',
+                        'champagne': '#F7E7CE'
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                        'cinzel': ['Cinzel', 'serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+                        'red-gradient': 'linear-gradient(135deg, #5C001E 0%, #1a0008 100%)',
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
-        :root {
-            --gold: #D4AF37;
-            --dark-black: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--dark-black);
-            color: white;
+        body { 
+            background-color: #050001; 
+            color: #ffe6f0; 
             overflow-x: hidden;
-            width: 100%;
+            background-image: radial-gradient(circle at 50% 0%, rgba(92, 0, 30, 0.15) 0%, transparent 50%);
+        }
+        
+        /* Ultra-Premium Glassmorphism */
+        .glass-panel {
+            background: rgba(15, 0, 3, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel:hover {
+            background: rgba(92, 0, 30, 0.4);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15);
+            transform: translateY(-5px);
         }
 
-        /* Prevent horizontal scroll on mobile */
-        html, body {
-            position: relative;
-            max-width: 100%;
+        /* Sophisticated Text Effects */
+        .text-glow { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        
+        /* Premium Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #D4AF37, #FFF8DC, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
         }
-
-        .gold-gradient {
-            background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 45%, #B38728 70%, #FBF5B7 100%);
+        .text-gradient-red {
+            background: linear-gradient(to right, #FF2A70, #FF1493);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .glass-panel {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
 
-        .btn-premium {
-            background: linear-gradient(135deg, #D4AF37 0%, #B38728 100%);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.25);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .gold-divider { 
+            height: 1px; 
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent); 
+            width: 100%; 
         }
 
-        .btn-premium:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(5,0,1,0.3) 0%, rgba(5,0,1,0.8) 70%, #050001 100%);
         }
 
-        /* Mobile Menu Animation */
-        #mobile-menu {
-            transition: transform 0.4s ease-in-out;
-            transform: translateX(100%);
-        }
-        #mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        /* Smooth Chart Container */
-        .chart-container {
+        /* High-End Golden Frame for Gallery */
+        .golden-frame {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
             position: relative;
-            height: 500px;
-            width: 100%;
+            transition: all 0.5s ease;
+        }
+        .golden-frame::after {
+            content: ''; position: absolute; inset: 0;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            margin: 8px;
+            pointer-events: none;
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+        }
+        .golden-frame:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        .golden-frame:hover::after {
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar for Gallery */
+        .custom-scroll::-webkit-scrollbar { height: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.5); border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(212, 175, 55, 0.8); }
+
+        /* Premium Buttons */
+        .btn-gold {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            background-size: 200% auto;
+            color: #000;
+            transition: all 0.5s ease;
+        }
+        .btn-gold:hover {
+            background-position: right center;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        .btn-outline::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: rgba(212, 175, 55, 0.1); transition: all 0.5s ease; z-index: -1;
+        }
+        .btn-outline:hover::before { left: 0; }
+        .btn-outline:hover { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+
+        /* Status Dot */
+        .status-dot {
+            height: 8px; width: 8px; background-color: #22c55e; border-radius: 50%;
+            display: inline-block; box-shadow: 0 0 8px #22c55e;
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); } 70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); } }
+
+        /* Chat System & Modals (Preserved Functionality but upgraded looks) */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(10px);
+        }
+
+        .chat-container {
+            display: none; position: fixed; bottom: 30px; right: 30px; width: 380px; height: 550px;
+            background: rgba(15, 0, 3, 0.95); border: 1px solid #D4AF37; border-radius: 12px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px rgba(212,175,55,0.15);
+            z-index: 9998; flex-direction: column; overflow: hidden; backdrop-filter: blur(10px);
         }
         @media (max-width: 768px) {
-            .chart-container { height: 350px; }
+            .chat-container { width: 100%; height: 100%; bottom: 0; right: 0; border-radius: 0; border: none; }
         }
+        .chat-header {
+            background: linear-gradient(135deg, #1a0008 0%, #050001 100%); border-bottom: 1px solid rgba(212,175,55,0.2);
+            color: #D4AF37; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .chat-messages {
+            flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px;
+            background: rgba(0,0,0,0.4);
+        }
+        .message { max-width: 82%; padding: 12px 16px; border-radius: 12px; font-size: 14px; word-wrap: break-word; line-height: 1.5; }
+        /* Keeping JS classes but overriding styles beautifully */
+        .msg-user { background: linear-gradient(135deg, #D4AF37 0%, #AA771C 100%); color: #000; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500;}
+        .msg-admin { background: #1a1a1a; color: #FFF8DC; align-self: flex-start; border-bottom-left-radius: 2px; border: 1px solid #333; }
+        .message img { max-width: 100%; border-radius: 6px; margin-top: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .chat-input { display: flex; padding: 15px; background: #0a0a0a; border-top: 1px solid rgba(212,175,55,0.2); align-items: center; gap: 10px;}
+        .chat-input input { flex: 1; background: #1a1a1a; border: 1px solid #333; color: white; padding: 12px 16px; border-radius: 30px; outline:none; transition: all 0.3s;}
+        .chat-input input:focus { border-color: #D4AF37; }
+        .chat-input button { background: transparent; color: #D4AF37; border: none; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center;}
+        #clientSendBtn, #adminSendBtn { background: #D4AF37; color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px;}
+        #clientSendBtn:hover, #adminSendBtn:hover { transform: scale(1.05); }
 
-        .floating {
-            animation: float 4s ease-in-out infinite;
+        /* Admin UI */
+        .admin-panel {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050001; z-index: 10000; flex-direction: row; color: white;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .user-list { width: 320px; background: #0a0a0a; border-right: 1px solid #333; overflow-y: auto; }
+        .user-item { padding: 18px; border-bottom: 1px solid #1f1f1f; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s;}
+        .user-item:hover { background: #1a1a1a; border-left: 3px solid #D4AF37; }
+        .admin-chat-area { flex: 1; display: flex; flex-direction: column; background: #050001; }
+        .secret-btn { position: fixed; bottom: 10px; right: 10px; width: 20px; height: 20px; background-color: transparent; border-radius: 50%; cursor: pointer; z-index: 50; }
+        
+        /* Video Call Button Animation */
+        @keyframes pulse-ring { 0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); } }
+        .video-btn-active { animation: pulse-ring 2s infinite; background: linear-gradient(to right, #D4AF37, #AA771C) !important; color: #000 !important; font-weight: bold; border-radius: 0 0 12px 12px;}
+
+        /* Image hover fade */
+        .img-fade-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
         }
     </style>
 </head>
-<body>
 
-    <!-- Top Market Ticker (Stable Wrapper) -->
-    <div class="w-full bg-black border-b border-white/10 overflow-hidden">
-        <div class="tradingview-widget-container">
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-            "symbols": [
-                {"proName": "NSE:NIFTY", "title": "NIFTY 50"},
-                {"proName": "NSE:BANKNIFTY", "title": "BANK NIFTY"},
-                {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
-                {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
-                {"proName": "OANDA:XAUUSD", "title": "GOLD"}
-            ],
-            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "adaptive"
-            }
-            </script>
-        </div>
-    </div>
+<body class="font-sans antialiased selection:bg-primary-gold selection:text-black">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-[100] bg-black/80 backdrop-blur-lg border-b border-white/5 px-4 md:px-10 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center font-black text-black text-xl">G</div>
-                <span class="text-xl md:text-2xl font-bold uppercase tracking-tighter">Ghanshyam <span class="gold-gradient">Tech</span></span>
+    <!-- Premium Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-dark-bg/80 backdrop-blur-xl transition-all duration-300">
+        <div class="flex justify-between items-center w-full px-6 md:px-12 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <!-- Royal Emblem Icon -->
+                <span class="material-symbols-outlined text-primary-gold text-3xl">diamond</span>
+                <div class="text-xl md:text-2xl font-cinzel font-bold tracking-[0.2em] text-white">
+                    VELVET <span class="text-primary-gold">TOUCH</span>
+                </div>
             </div>
-
-            <!-- Desktop Links -->
-            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-                <a href="#analysis" class="hover:text-white transition">Analysis</a>
-                <a href="#services" class="hover:text-white transition">Strategies</a>
-                <a href="#pricing" class="hover:text-white transition">Education</a>
-                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="btn-premium text-black px-6 py-2.5 rounded-full">Join Telegram</a>
+            
+            <div class="hidden lg:flex gap-10 items-center">
+                <a class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/60 hover:text-primary-gold transition-colors" href="#about">The Philosophy</a>
+                <a class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/60 hover:text-primary-gold transition-colors" href="#gallery">VIP Companions</a>
+                <a class="text-[11px] uppercase tracking-[0.2em] font-semibold text-white/60 hover:text-primary-gold transition-colors" href="#services">Exclusive Rituals</a>
+                <button class="text-[11px] uppercase tracking-[0.2em] font-semibold text-primary-gold flex items-center gap-1 hover:text-white transition-colors openChatBtn">
+                    <span class="material-symbols-outlined text-[14px]">support_agent</span> Concierge
+                </button>
             </div>
-
-            <!-- Mobile Toggle -->
-            <button class="lg:hidden text-2xl text-white" id="menu-btn">
-                <i class="fa-solid fa-bars-staggered"></i>
+            
+            <button class="hidden md:inline-flex items-center justify-center px-8 py-3 btn-gold text-[11px] tracking-[0.2em] uppercase font-bold rounded-sm openChatBtn">
+                Book Sanctuary
+            </button>
+            
+            <!-- Mobile Menu Icon (Visual Only) -->
+            <button class="lg:hidden text-primary-gold openChatBtn">
+                <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
         </div>
     </nav>
 
-    <!-- Mobile Side Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-[110] bg-black p-10 lg:hidden">
-        <div class="flex justify-end">
-            <button class="text-3xl" id="close-btn">&times;</button>
+    <!-- Ultra-Luxurious Hero Section -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- High-end dark sensual image -->
+            <img class="w-full h-full object-cover opacity-40 mix-blend-lighten scale-105 animate-[pulse_20s_ease-in-out_infinite]" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="Luxury VIP Spa" />
+            <div class="absolute inset-0 hero-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050001] via-transparent to-transparent"></div>
         </div>
-        <div class="flex flex-col space-y-8 mt-10 text-xl font-bold uppercase">
-            <a href="#analysis" class="mobile-link">Market Analysis</a>
-            <a href="#services" class="mobile-link">Strategies</a>
-            <a href="#pricing" class="mobile-link">Masterclass</a>
-            <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="text-[#D4AF37]">Telegram Channel</a>
-        </div>
-    </div>
 
-    <!-- Hero Section -->
-    <section class="relative pt-20 pb-16 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6" data-aos="fade-down">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]"></span>
-                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Next Gen Trading Intelligence</span>
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center mt-16">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="h-[1px] w-12 bg-primary-gold/50"></div>
+                <p class="text-[10px] md:text-xs text-primary-gold uppercase tracking-[0.5em] font-semibold">Strictly Confidential & Elite</p>
+                <div class="h-[1px] w-12 bg-primary-gold/50"></div>
             </div>
             
-            <h1 class="text-4xl md:text-7xl lg:text-8xl font-extrabold leading-[1.1] mb-8" data-aos="fade-up">
-                Master the Markets with <br> <span class="gold-gradient">Institutional Precision</span>
+            <h1 class="font-cinzel text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-[1.1] drop-shadow-2xl font-medium">
+                The Pinnacle of <br />
+                <span class="text-gradient italic font-serif">Sensory Pleasure</span>
             </h1>
             
-            <p class="text-gray-400 text-base md:text-xl max-w-3xl mx-auto mb-10 font-light" data-aos="fade-up" data-aos-delay="100">
-                Stop guessing. Start calculating. Learn the exact Price Action and Option Buying strategies used by Ghanshyam Tech to dominate Nifty and Forex markets.
+            <p class="font-sans text-base md:text-lg text-champagne/70 max-w-2xl mb-12 font-light leading-relaxed">
+                Step into a world of ultimate seduction and absolute privacy. Our elite therapies and top-tier companions are designed to melt your stress and ignite your deepest passions.
             </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="w-full sm:w-auto btn-premium px-10 py-5 rounded-2xl text-black font-bold text-lg flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-telegram text-2xl"></i> JOIN FREE TELEGRAM
+            
+            <div class="flex flex-col sm:flex-row gap-5">
+                <button class="px-10 py-4 btn-gold text-xs uppercase tracking-[0.2em] font-bold rounded-sm openChatBtn">
+                    Initiate Booking
+                </button>
+                <a class="px-10 py-4 btn-outline text-xs uppercase tracking-[0.2em] font-bold rounded-sm flex items-center justify-center gap-2" href="#gallery">
+                    Explore Gallery <span class="material-symbols-outlined text-sm">arrow_downward</span>
                 </a>
-                <a href="#pricing" class="w-full sm:w-auto glass-panel px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/10 transition">
-                    VIEW COURSES
-                </a>
-            </div>
-
-            <!-- Hero Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20 border-y border-white/5 py-10" data-aos="zoom-in">
-                <div>
-                    <div class="text-2xl md:text-4xl font-bold gold-gradient">150K+</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Students Trained</div>
-                </div>
-                <div>
-                    <div class="text-2xl md:text-4xl font-bold gold-gradient">8.5/10</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Win Probability</div>
-                </div>
-                <div>
-                    <div class="text-2xl md:text-4xl font-bold gold-gradient">24/7</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Market Support</div>
-                </div>
-                <div>
-                    <div class="text-2xl md:text-4xl font-bold gold-gradient">FREE</div>
-                    <div class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Daily Analysis</div>
-                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Advanced Chart Section -->
-    <section id="analysis" class="py-20 px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                <div class="max-w-xl">
-                    <h2 class="text-3xl md:text-5xl font-bold mb-4">Live Market <span class="gold-gradient">Execution</span></h2>
-                    <p class="text-gray-400">Watch how we analyze liquidity zones in real-time across Bank Nifty and Major Forex pairs.</p>
-                </div>
-                <div class="text-right">
-                    <span class="text-xs font-bold uppercase text-gray-500">Live Feed: NSE/Forex</span>
-                </div>
-            </div>
-
-            <div class="glass-panel rounded-[2rem] p-2 md:p-4 shadow-2xl" data-aos="fade-up">
-                <div class="chart-container overflow-hidden rounded-2xl">
-                    <!-- TradingView Widget -->
-                    <div id="tradingview_main" style="height:100%;width:100%"></div>
-                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                    <script type="text/javascript">
-                    new TradingView.widget({
-                        "autosize": true,
-                        "symbol": "NSE:BANKNIFTY",
-                        "interval": "15",
-                        "timezone": "Asia/Kolkata",
-                        "theme": "dark",
-                        "style": "1",
-                        "locale": "en",
-                        "enable_publishing": false,
-                        "allow_symbol_change": true,
-                        "container_id": "tradingview_main"
-                    });
-                    </script>
-                </div>
-            </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-50 animate-bounce">
+            <span class="text-[10px] uppercase tracking-[0.3em] text-primary-gold mb-2">Scroll to Discover</span>
+            <span class="material-symbols-outlined text-primary-gold">mouse</span>
         </div>
-    </section>
+    </header>
 
-    <!-- Services Grid -->
-    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] hover:border-[#D4AF37]/40" data-aos="fade-up">
-                <i class="fa-solid fa-bolt-lightning text-4xl text-yellow-500 mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Option Buying</h3>
-                <p class="text-gray-400 leading-relaxed">Learn the "Ghanshyam Setup" for fast momentum trading in Bank Nifty Options. Minimum capital, maximum returns.</p>
-            </div>
-            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] border-[#D4AF37]/30" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa-solid fa-chart-line text-4xl text-blue-500 mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">SMC Forex Logic</h3>
-                <p class="text-gray-400 leading-relaxed">Trade EURUSD and Gold using Smart Money Concepts. Identify where the banks are trapping retail traders.</p>
-            </div>
-            <div class="glass-panel p-8 md:p-12 rounded-[2.5rem] hover:border-[#D4AF37]/40" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-shield-halved text-4xl text-green-500 mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4">Risk Management</h3>
-                <p class="text-gray-400 leading-relaxed">The holy grail of trading. We teach you how to never blow an account and stay in the game forever.</p>
-            </div>
-        </div>
-    </section>
+    <div class="gold-divider"></div>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 px-6 bg-black">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6">Elevate Your <span class="gold-gradient">Trading</span></h2>
-                <p class="text-gray-500">Choose the path that fits your ambition.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Basic -->
-                <div class="glass-panel p-10 rounded-[3rem] relative group" data-aos="fade-right">
-                    <h3 class="text-2xl font-bold mb-2">Self-Paced Mastery</h3>
-                    <div class="text-4xl font-black mb-6">₹9,999 <span class="text-sm text-gray-500">One-time</span></div>
-                    <ul class="space-y-4 mb-10 text-gray-400">
-                        <li><i class="fa-solid fa-check text-gold mr-3"></i> 30+ Video Lessons</li>
-                        <li><i class="fa-solid fa-check text-gold mr-3"></i> Price Action Basics</li>
-                        <li><i class="fa-solid fa-check text-gold mr-3"></i> PDF Cheat Sheets</li>
-                        <li><i class="fa-solid fa-xmark text-red-500 mr-3"></i> Live Mentorship</li>
-                    </ul>
-                    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="block text-center w-full py-4 border border-white/20 rounded-2xl font-bold hover:bg-white hover:text-black transition">Inquire on Telegram</a>
-                </div>
-
-                <!-- VIP -->
-                <div class="glass-panel p-10 rounded-[3rem] border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.15)] relative scale-100 lg:scale-105" data-aos="fade-left">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
-                    <h3 class="text-2xl font-bold mb-2 gold-gradient">Pro VIP Mentorship</h3>
-                    <div class="text-4xl font-black mb-6">₹24,999 <span class="text-sm text-gray-500">6 Months</span></div>
-                    <ul class="space-y-4 mb-10 text-gray-200">
-                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Live Market Trading Calls</li>
-                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Advanced Option Buying</li>
-                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Psychology Masterclass</li>
-                        <li><i class="fa-solid fa-crown text-[#D4AF37] mr-3"></i> Direct WhatsApp Support</li>
-                    </ul>
-                    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="block text-center w-full py-4 btn-premium rounded-2xl font-bold text-black uppercase tracking-widest">Enroll in VIP</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-20 border-t border-white/5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <div class="flex items-center gap-3 mb-8">
-                <div class="w-12 h-12 bg-[#D4AF37] rounded-xl flex items-center justify-center font-black text-black text-2xl">G</div>
-                <span class="text-3xl font-bold uppercase">Ghanshyam <span class="gold-gradient">Tech</span></span>
+    <!-- The Philosophy / About Section (NEW) -->
+    <section id="about" class="py-24 px-6 relative bg-dark-bg">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-4 border border-primary-gold/20 transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-500"></div>
+                <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Spa Detail" class="relative z-10 w-full h-[500px] object-cover filter grayscale hover:grayscale-0 transition-all duration-700" />
             </div>
             
-            <div class="flex gap-6 mb-12">
-                <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-telegram"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-xl hover:text-[#D4AF37] transition"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-
-            <p class="text-gray-600 text-xs max-w-2xl leading-relaxed mb-8 uppercase tracking-widest">
-                Disclaimer: Trading in the Stock Market or Forex involves significant risk. Past performance of Ghanshyam Tech strategies does not guarantee future results.
-            </p>
-
-            <div class="text-gray-500 text-[10px] uppercase tracking-[0.3em]">
-                &copy; 2024 Ghanshyam Tech Education | Built for Professionals
+            <div>
+                <p class="text-xs text-primary-gold uppercase tracking-[0.4em] font-bold mb-4">The Velvet Touch Philosophy</p>
+                <h2 class="font-cinzel text-4xl md:text-5xl text-white mb-8 leading-tight">A Sanctuary For <br/><span class="text-gradient">The Elite</span></h2>
+                <p class="text-champagne/60 text-sm leading-relaxed mb-6 font-light">
+                    We understand that true luxury lies in absolute discretion and unparalleled service. Velvet Touch was established for distinguished gentlemen and couples who seek an escape from the ordinary.
+                </p>
+                <p class="text-champagne/60 text-sm leading-relaxed mb-8 font-light">
+                    Every detail of our private suites is meticulously crafted to ensure your comfort. Our carefully selected therapists are not just experts in massage; they are muses dedicated to awakening your senses and fulfilling your unspoken desires.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary-gold mt-1">verified_user</span>
+                        <div>
+                            <h4 class="text-white font-serif text-lg">100% Discrete</h4>
+                            <p class="text-xs text-champagne/50 mt-1">Your privacy is our highest priority.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary-gold mt-1">diamond</span>
+                        <div>
+                            <h4 class="text-white font-serif text-lg">VIP Suites</h4>
+                            <p class="text-xs text-champagne/50 mt-1">Luxury rooms with private showers.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Fixed Telegram Button -->
-    <a href="https://t.me/+0xqbn2OVyRY1MDQ1" class="fixed bottom-6 right-6 z-[200] w-16 h-16 bg-[#0088cc] text-white rounded-2xl flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition-transform floating">
-        <i class="fa-brands fa-telegram"></i>
-    </a>
+    <!-- VIP Girls / Therapists Gallery Section (ENHANCED) -->
+    <section id="gallery" class="py-24 px-4 md:px-10 bg-dark-surface relative border-y border-white/5">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10 pointer-events-none"></div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            disable: 'mobile'
-        });
+        <div class="max-w-7xl mx-auto mb-16 text-center relative z-10">
+            <div class="flex justify-center items-center gap-3 mb-4">
+                <span class="h-[1px] w-8 bg-primary-gold/50"></span>
+                <p class="text-xs text-primary-gold uppercase tracking-[0.4em] font-bold">Premium Selection</p>
+                <span class="h-[1px] w-8 bg-primary-gold/50"></span>
+            </div>
+            <h2 class="font-cinzel text-5xl md:text-6xl text-white">Our <span class="text-gradient font-serif italic">Elite Muses</span></h2>
+            <p class="text-champagne/60 mt-6 max-w-2xl mx-auto font-light text-sm">
+                Scroll to explore our exclusive VIP models. Each brings a unique touch of passion, elegance, and healing hands to your private session.
+            </p>
+        </div>
 
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('menu-btn');
-        const closeBtn = document.getElementById('close-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => mobileMenu.classList.add('active'));
-        closeBtn.addEventListener('click', () => mobileMenu.classList.remove('active'));
-        links.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('active')));
-
-        // Smooth Scroll handling for mobile
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+        <!-- Horizontal Scroll Container -->
+        <div class="flex overflow-x-auto gap-8 pb-12 snap-x custom-scroll px-4 md:px-10 relative z-10" style="scroll-behavior: smooth;">
+            
+     
